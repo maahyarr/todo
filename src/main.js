@@ -1,9 +1,6 @@
-const todos = [
-  {
-    text: "task1",
-    isDone: true,
-  },
-];
+const todos = localStorage.getItem("todos")
+  ? JSON.parse(localStorage.getItem("todos"))
+  : [];
 function todoItem(item, index) {
   const todoElement = document.createElement("li");
   todoElement.className =
@@ -45,8 +42,9 @@ function removeTodo(index) {
 }
 
 function render() {
-  if (todos.length) {
     const todosUL = document.createElement("ul");
+  if (todos.length) {
+    
     todosUL.className =
       "space-y-3 h-[220px] overflow-y-scroll flex flex-col justify-start relative items-center";
 
@@ -56,7 +54,18 @@ function render() {
 
     document.getElementById("todosUl").innerHTML = todosUL.outerHTML;
 
+  } else {
+    todosUl.innerHTML = `
+      <div class="text-center text-gray-500 py-8 w-full">
+        <i class="fas fa-inbox text-2xl mb-2 block"></i>
+        هیچ تسکی وجود ندارد
+      </div>
+    `;
   }
+
+
+
+  window.localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 function handleChecked(index) {
@@ -72,7 +81,7 @@ document.forms[0].addEventListener("submit", (e) => {
   e.preventDefault();
   const todoInput = e.target.elements.todoInput;
   if (todoInput.value) {
-    todos.unshift({
+    todos.push({
       text: todoInput.value,
       isDone: false,
     });
