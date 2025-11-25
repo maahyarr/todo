@@ -1,13 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./src/style.css">
-</head>
-<body>
-    <div class="w-5 h-200 bg-blue-500"></div>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link
+      rel="stylesheet"
+      href="./icon/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.min.css"
+    />
+  </head>
+  <body
+    class="w-full h-screen 2xl:bg-blue-800 xl:bg-amber-200 lg:bg-emerald-700 md:bg-slate-500 flex bg-fuchsia-900 justify-center items-center p-4"
+  >
+    <div
+      class="w-full max-w-4xl h-[400px] bg-amber-900 shadow-[0_0_15px_black] flex justify-center rounded-xl overflow-hidden"
+    >
+      <div
+        class="w-[70%] h-full bg-blue-700 shadow-[0_0_15px_black] p-6 flex flex-col"
+      >
+        <div>
+          <!-- Header -->
+          <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold text-white">My Todo List</h1>
+            <div class="text-white text-sm bg-blue-900 px-3 py-1 rounded-full">
+              <span id="todoCount">0</span> tasks
+            </div>
+          </div>
+
+          <!-- Add Todo Form -->
+          <div id="todos" class="flex mb-6">
+            <form id="form" class="w-full flex mb-6 justify-center ">
+              <input
+                type="text"
+                id="todoInput"
+                placeholder="Add a new task..."
+                class="w-[80%] px-4 py-2 bg-amber-50 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <button
+                type="submit"
+                id="add-btn"
+                class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-r-lg transition-colors"
+              >
+                add
+              </button>
+            </form>
+          </div>
+
+          <!-- Todo List -->
+          <div id="todosUl" class="grow pr-2">
+            <div id="todos" class="flex justify-center mt-5">
+              <h3 class="text-[30px]">you can add your tasks</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="./src/main.js"></script>
-</body>
+  </body>
 </html>
