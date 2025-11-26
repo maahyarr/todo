@@ -56,7 +56,7 @@ function render() {
 
   } else {
     todosUl.innerHTML = `
-      <div class="text-center text-gray-500 py-8 w-full">
+      <div class="text-center text-gray-900 py-8 w-full">
         <i class="fas fa-inbox text-2xl mb-2 block"></i>
         هیچ تسکی وجود ندارد
       </div>
